@@ -61,3 +61,122 @@ tl.from("#skills h2", {
   },
   "-=0.4" // overlap slightly with title animation
 );
+
+const tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#animated-ul",
+    start: "bottom 20%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl1.fromTo(
+  "#animated-ul li a",
+  { opacity: 0, y: 50, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.18,
+    ease: "power3.out",
+    delay: 1.8,
+  },
+  "-=0.4" // overlap slightly with title animation
+);
+
+const tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#education-sec",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl2.fromTo(
+  "#education-sec .container h2",
+  { opacity: 0, y: 20, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.18,
+    ease: "power3.out",
+    delay: 0.8,
+  },
+  "-=0.4" // overlap slightly with title animation
+);
+
+const tl3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#education-sec .container p",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl3.fromTo(
+  "#education-sec .container p",
+  { opacity: 0, y: 20, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.18,
+    ease: "power3.out",
+    delay: 0.8,
+  },
+  "-=0.4" // overlap slightly with title animation
+);
+
+const tl4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#projects-sec",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl4.fromTo(
+  "#projects-sec p",
+  { opacity: 0, y: 20, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.18,
+    ease: "power3.out",
+    delay: 0.8,
+  },
+  "-=0.4" // overlap slightly with title animation
+);
+
+const tl5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#projects-sec .cards-container",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+tl5.fromTo(
+  "#projects-sec .cards-container",
+  { opacity: 0, y: 20, scale: 0.9 },
+  {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.18,
+    ease: "power3.out",
+    delay: 0.8,
+  },
+  "-=0.4" // overlap slightly with title animation
+);

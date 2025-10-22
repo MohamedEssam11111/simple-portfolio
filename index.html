@@ -10,6 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Tagesschrift&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Playwrite+AU+QLD:wght@100..400&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="portfolio.js" defer></script>
 
@@ -24,15 +32,15 @@
 
         <nav>
           <span>M-E</span>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Education</a></li>
-            <li><a href="">Skills</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contect</a></li>
+          <ul id="animated-ul">
+            <li><a href="#container">Home</a></li>
+            <li><a href="#education-sec">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects-sec">Projects</a></li>
+            <li><a href="#contact-sec">Contect</a></li>
           </ul>
         </nav>
-        <div class="container">
+        <div class="container" id="container">
           <p class="first-p">
             <span class="hello">hello</span>
 
@@ -60,7 +68,7 @@
         <div class="shadow"></div>
       </header>
 
-      <section class="education-sec">
+      <section class="education-sec" id="education-sec">
         <div class="container">
           <!-- prettier-ignore -->
           <img src="backgrounds/Gemini_Generated_Image_dv686fdv686fdv68.png" alt=""/>
@@ -85,10 +93,12 @@
           <div class="skill">CSS</div>
           <div class="skill">JavaScript</div>
           <div class="skill">React</div>
+          <div class="skill">Tailwind</div>
+          <div class="skill">Typescript</div>
         </div>
       </section>
 
-      <section class="projects-sec">
+      <section class="projects-sec" id="projects-sec">
         <p>projects</p>
         <!-- prettier-ignore -->
         <img class="background-img" src="backgrounds/Gemini_Generated_Image_f5qnzxf5qnzxf5qn.png" alt="">
@@ -114,24 +124,23 @@
         </div>
       </section>
 
-      <section class="contact-sec">
+      <section class="contact-sec" id="contact-sec">
         <div class="big-container">
           <!-- prettier-ignore -->
           <div class="contact-info">
           <span>Contact me</span>
-          <div class="email"><img src="img/facebook.png" alt="" /> <a href="">http://facebook.com/koky.essam.9/</a></div>
-          <div class="phone-num"><img src="img/facebook.png" alt="" /> <a href="01116731195">01116731195</a></div>
+          <div class="email"><img src="img/send.png" alt="" /> <a href="mohamedessam9523@gmail.com">mohamedessam9523@gmail.com</a></div>
+          <div class="phone-num"><img src="img/contact.png" alt="" /> <a href="01116731195">01116731195</a></div>
           <div class="contain-buttons">
-            <a class="facebook" href=""><img src="img/facebook.png" alt="" /></a>
-            <a class="instgram" href=""><img src="img/facebook.png" alt="" /></a>
-            <a class="linkedin" href=""><img src="img/facebook.png" alt="" /></a>
-            <a class="github" href=""><img src="img/facebook.png" alt="" /></a>
+            <a class="facebook" target="_blank" href="https://www.facebook.com/koky.essam.9/"><img src="img/facebook.png" alt="" /></a>
+            <a class="instgram" target="_blank" href="https://www.instagram.com/mohamed.e.ssam/"><img src="img/instgram.png" alt="" /></a>
+            <a class="linkedin" target="_blank" href="https://www.linkedin.com/in/mohamed-essam-759b98357/"><img src="img/linkedin.png" alt="" /></a>
+            <a class="github" target="_blank" href="https://github.com/MohamedEssam11111"><img src="img/github.png" alt="" /></a>
           </div>
-          <a href="" download class="cv-btn">Download cv</a>
+          <a href="cv.pdf" download class="cv-btn">Download cv</a>
         </div>
           <div class="form-container">
             <form action="">
-              <label for="name">Name</label>
               <input
                 class="name"
                 type="text"
@@ -139,7 +148,6 @@
                 id="name"
                 placeholder="Enter your name"
               />
-              <label for="email">Email</label>
               <input
                 class="email"
                 type="email"
@@ -147,9 +155,7 @@
                 id="email"
                 placeholder="Enter your email"
               />
-              <label for="message">Message</label>
               <textarea
-                style="min-width: 100%"
                 class="message"
                 id="message"
                 placeholder="Enter a message"

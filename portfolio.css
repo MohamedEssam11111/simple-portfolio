@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Karla", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -41,7 +45,13 @@ header nav span {
   font-size: 30px;
   margin-left: 8%;
   min-width: 75px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
+header nav span:hover {
+  text-shadow: 0px 3px 20px rgb(247, 255, 17);
+  transform: scale(1.15);
+}
+
 header nav ul {
   display: flex;
   align-items: center;
@@ -52,6 +62,29 @@ header nav ul {
 
 header nav ul li a {
   color: rgb(255, 255, 255);
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: yellow;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(221, 0, 255);
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
 }
 
 #type-animation {
@@ -66,8 +99,16 @@ header .container {
 .first-p {
   padding: 60px 0px 0px 0px;
   font-size: 50px;
-
+  animation: ani3 1.5s ease 0.2s forwards;
   /* width: 800px; */
+}
+@keyframes ani3 {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 .first-p .hello {
   display: block;
@@ -85,9 +126,29 @@ header .container .edit-img {
   position: relative;
   min-width: 348px;
   height: 348px;
+  opacity: 0;
   overflow: hidden;
   border-radius: 50%;
+  transition: box-shadow 0.3s ease;
+  animation: ani2 1.5s ease 0.4s forwards;
 }
+header .container .edit-img:hover {
+  box-shadow: 0px 0px 100px #ff3aff;
+}
+@keyframes ani2 {
+  0% {
+    opacity: 0%;
+    top: 50px;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    opacity: 100%;
+    top: 0px;
+  }
+}
+
 header .container .edit-img .img-container {
   position: absolute;
   width: 346px;
@@ -132,6 +193,8 @@ header .container img {
   max-width: 600px;
   min-width: 200px;
   line-height: 35px;
+  opacity: 0;
+  animation: ani2 1.5s ease 0.4s forwards;
 }
 .about-sec h2 {
   font-size: 60px;
@@ -213,6 +276,7 @@ header .container img {
   background: #db28bd75; /* subtle pill background */
   backdrop-filter: blur(4px);
 }
+/* -------------------------------------------- */
 
 .projects-sec {
   position: relative;
@@ -293,7 +357,7 @@ header .container img {
   align-items: center;
   font-weight: 900;
   color: black;
-  transition: background-color 0.3s ease, color 0.5s ease;
+  transition: background-color 0.3s ease, color 0.5s ease, box-shadow 0.2s ease;
   animation: ani1 3s ease-in-out infinite;
 }
 .projects-sec .cards-container .card a:hover {
@@ -318,15 +382,16 @@ header .container img {
   height: 50px;
 }
 .contact-sec {
-  background-color: #000000;
+  background-image: url("img/galaxy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .contact-sec .big-container {
-  width: fit-content;
-  padding: 80px 50px 100px 170px;
+  /* width: fit-content; */
+  padding: 80px 0px 100px 170px;
   display: flex;
   justify-content: space-between;
-  gap: 100px;
-  box-sizing: border-box;
+  gap: 70px;
 }
 .contact-sec .big-container .contact-info {
   padding: 50px;
@@ -335,17 +400,27 @@ header .container img {
   gap: 10px;
 }
 .contact-sec .big-container .contact-info span {
-  font-size: 55px;
+  font-size: 65px;
   margin-bottom: 20px;
+  font-family: "Playwrite AU QLD", cursive;
+}
+.contact-sec .big-container .contact-info .email a,
+.contact-sec .big-container .contact-info .phone-num a {
+  color: #f0f0f0;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 .contact-sec .big-container .contact-info .email,
 .contact-sec .big-container .contact-info .phone-num {
-  padding: 0px 70px 0px 20px;
+  padding: 10px 70px 0px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   font-size: 20px;
+  color: #f0f0f0;
 }
 .contact-sec .big-container .contact-info .email img,
 .contact-sec .big-container .contact-info .phone-num img {
@@ -358,7 +433,7 @@ header .container img {
   margin-bottom: 20px;
 }
 .contact-sec .big-container .contact-info .contain-buttons {
-  padding: 20px 0px 50px 20px;
+  padding: 20px 0px 50px 0px;
   display: flex;
   gap: 15px;
 }
@@ -369,25 +444,83 @@ header .container img {
 .contact-sec .big-container .contact-info .cv-btn {
   width: fit-content;
   padding: 20px;
-  margin-left: 40px;
   font-size: 30px;
   background-color: red;
-  color: #000000;
+  color: white;
   font-weight: 900;
   border-radius: 18px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.contact-sec .big-container .contact-info .cv-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0px -5px 40px#ffffeb;
 }
 
 .contact-sec .big-container .form-container {
+  width: 650px;
   background-color: #000000;
 }
 .contact-sec .big-container .form-container form {
-  width: 500px;
-  padding: 20px;
+  padding: 20px 50px 0px 30px;
   display: flex;
   flex-direction: column;
   position: relative;
+  gap: 30px;
   top: 50px;
 }
+
 .contact-sec .big-container .form-container form input {
+  padding: 8px;
   width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 12px;
+  background-color: #282828;
+  font-size: 16px;
+  color: white;
+}
+.contact-sec .big-container .form-container form input:focus {
+  outline: none;
+  border: 3px rgb(255, 38, 0) solid;
+}
+
+.contact-sec .big-container .form-container form textarea {
+  padding: 8px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 200px;
+  max-height: 250px;
+  border: none;
+  border-radius: 12px;
+  background-color: #282828;
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: white;
+}
+.contact-sec .big-container .form-container form textarea:focus {
+  outline: none;
+  border: 3px rgb(255, 38, 0) solid;
+}
+.contact-sec .big-container .form-container form button {
+  width: 150px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: rgb(255, 38, 0);
+  font-size: 20px;
+  font-weight: 900;
+  color: #f0f0f0;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.contact-sec .big-container .form-container form button:hover {
+  transform: scale(1.15);
+  box-shadow: 0px -5px 40px#ffffeb;
+}
+
+.contact-sec .big-container .contain-buttons a {
+  border-radius: 50%;
+  transition: transform 0.5s ease, box-shadow 0.2s ease;
+}
+.contact-sec .big-container .contain-buttons a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px -5px 40px#ffffeb;
 }

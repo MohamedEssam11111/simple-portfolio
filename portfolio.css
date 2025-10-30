@@ -44,6 +44,7 @@ header nav span {
   font-weight: 900;
   font-size: 30px;
   margin-left: 8%;
+  margin-right: 18px;
   min-width: 75px;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
@@ -98,16 +99,19 @@ header .container {
 }
 .first-p {
   padding: 60px 0px 0px 0px;
-  font-size: 50px;
+  font-size: 45px;
   animation: ani3 1.5s ease 0.2s forwards;
+  position: relative;
   /* width: 800px; */
 }
 @keyframes ani3 {
   0% {
     opacity: 0%;
+    right: 50px;
   }
   100% {
     opacity: 100%;
+    right: 0px;
   }
 }
 .first-p .hello {
@@ -189,20 +193,26 @@ header .container img {
 }
 /* ---------------------------------------- */
 .about-sec {
+  position: relative;
   margin: 50px 0px 20px 100px;
   max-width: 600px;
   min-width: 200px;
   line-height: 35px;
-  opacity: 0;
-  animation: ani2 1.5s ease 0.4s forwards;
+  /* opacity: 0; */
 }
 .about-sec h2 {
+  position: relative;
+  opacity: 0%;
   font-size: 60px;
   margin-bottom: 40px;
+  animation: ani2 1.5s ease 1s forwards;
 }
 .about-sec p {
+  position: relative;
+  opacity: 0%;
   margin-bottom: 50px;
   font-size: 25px;
+  animation: ani2 1.5s ease 1.2s forwards;
 }
 /* ------------------------------------ */
 .education-sec {
@@ -307,18 +317,19 @@ header .container img {
   background-color: #471d6eb5;
   display: flex;
   /* justify-content: space-between; */
+  justify-content: center;
   flex-flow: row wrap;
   gap: 25px;
   border-radius: 18px;
 }
 .projects-sec .cards-container .card {
   width: 350px;
-  min-width: 300px;
+  min-width: 270px;
+  max-width: 450px;
   position: relative;
   border-radius: 18px;
   display: flex;
   justify-content: center;
-  flex-grow: 1;
   border: 3px black solid;
   overflow: hidden;
 }
@@ -388,13 +399,15 @@ header .container img {
 }
 .contact-sec .big-container {
   /* width: fit-content; */
-  padding: 80px 0px 100px 170px;
+  padding: 80px 0px 100px 10%;
   display: flex;
   justify-content: space-between;
-  gap: 70px;
+  flex-flow: row wrap;
+  gap: 10px;
+  overflow: hidden;
 }
 .contact-sec .big-container .contact-info {
-  padding: 50px;
+  padding: 50px 5% 50px 5%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -457,7 +470,7 @@ header .container img {
 }
 
 .contact-sec .big-container .form-container {
-  width: 650px;
+  width: 50%;
   background-color: #000000;
 }
 .contact-sec .big-container .form-container form {
@@ -486,7 +499,6 @@ header .container img {
 
 .contact-sec .big-container .form-container form textarea {
   padding: 8px;
-  min-width: 100%;
   max-width: 100%;
   min-height: 200px;
   max-height: 250px;
@@ -523,4 +535,238 @@ header .container img {
 .contact-sec .big-container .contain-buttons a:hover {
   transform: translateY(-10px);
   box-shadow: 0px -5px 40px#ffffeb;
+}
+
+@media (max-width: 1260px) {
+  .contact-sec .big-container .form-container {
+    width: 45%;
+  }
+}
+@media (max-width: 1220px) {
+  .first-p {
+    font-size: 40px;
+    min-width: 718px;
+  }
+  .contact-sec .big-container .contact-info span {
+    font-size: 60px;
+  }
+  .contact-sec .big-container .contact-info .email,
+  .contact-sec .big-container .contact-info .phone-num {
+    font-size: 15px;
+  }
+  .contact-sec .big-container .contact-info .email img,
+  .contact-sec .big-container .contact-info .phone-num img {
+    width: 30px;
+    height: 30px;
+  }
+  .contact-sec .big-container .contact-info .cv-btn {
+    padding: 17px;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1140px) {
+  header .container {
+    /* justify-content: center; */
+    justify-content: center;
+  }
+  header .container .edit-img {
+    margin-right: 250px;
+    margin-left: 250px;
+    order: 1;
+  }
+  header .container .first-p {
+    order: 2;
+  }
+}
+
+@media (max-width: 970px) {
+  .projects-sec .cards-container .card {
+    flex-grow: 1;
+  }
+  .projects-sec .cards-container .card img {
+    height: 350px;
+  }
+  header nav ul {
+    gap: 20px;
+  }
+  .contact-sec .big-container .contact-info {
+    padding-left: 1%;
+  }
+}
+@media (max-width: 855px) {
+  .contact-sec .big-container .contact-info span {
+    font-size: 55px;
+  }
+  .contact-sec .big-container .contact-info .email,
+  .contact-sec .big-container .contact-info .phone-num {
+    font-size: 13px;
+  }
+  .contact-sec .big-container .contact-info .email img,
+  .contact-sec .big-container .contact-info .phone-num img {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-sec .big-container .contact-info .cv-btn {
+    padding: 16px;
+    font-size: 23px;
+  }
+}
+@media (max-width: 770px) {
+  header nav ul li a {
+    font-size: 20px;
+  }
+  header nav span {
+    font-size: 25px;
+  }
+  header nav {
+    padding: 15px;
+  }
+  .contact-sec .big-container .contact-info {
+    margin-left: 30px;
+  }
+  .contact-sec .big-container {
+    padding-left: 20px;
+    justify-content: center;
+  }
+  .contact-sec .big-container .form-container form input {
+    min-width: 420px;
+  }
+  .contact-sec .big-container .form-container form textarea {
+    min-width: 420px;
+  }
+  .contact-sec .big-container .form-container {
+    padding-left: 0px;
+    padding-right: 150px;
+  }
+  .first-p {
+    font-size: 30px;
+    padding-left: 120px;
+  }
+  .about-sec {
+    margin-left: 50px;
+  }
+  .about-sec h2 {
+    font-size: 55px;
+  }
+  .about-sec p {
+    font-size: 20px;
+  }
+  .education-sec .container {
+    margin-left: 20px;
+  }
+  .education-sec h2 {
+    font-size: 55px;
+  }
+  .education-sec p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 630px) {
+  .first-p {
+    font-size: 26px;
+    padding-left: 200px;
+  }
+  header nav ul li a {
+    font-size: 15px;
+  }
+  header nav span {
+    font-size: 20px;
+  }
+  header nav {
+    padding: 13px;
+  }
+  header .container .edit-img {
+    min-width: 306px;
+    height: 306px;
+  }
+  header .container .edit-img .img-container {
+    width: 306px;
+    height: 305px;
+  }
+  header .container img {
+    width: 300px;
+    height: 300px;
+  }
+  .about-sec h2 {
+    font-size: 50px;
+  }
+  .about-sec p {
+    font-size: 17px;
+  }
+  .education-sec h2 {
+    font-size: 50px;
+  }
+  .education-sec p {
+    font-size: 17px;
+  }
+  .contact-sec .big-container .form-container form input {
+    min-width: 380px;
+  }
+  .contact-sec .big-container .form-container form textarea {
+    min-width: 380px;
+  }
+}
+
+@media (max-width: 550px) {
+  header nav ul {
+    gap: 10px;
+    flex-flow: row wrap;
+  }
+  header nav {
+    gap: 0px;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .first-p {
+    font-size: 23px;
+    padding-left: 270px;
+  }
+  .contact-sec .big-container .form-container form input {
+    min-width: 300px;
+  }
+  .contact-sec .big-container .form-container form textarea {
+    min-width: 300px;
+  }
+}
+@media (max-width: 460px) {
+  .first-p {
+    font-size: 21px;
+    padding-left: 320px;
+  }
+  header .container .edit-img {
+    min-width: 296px;
+    height: 296px;
+  }
+  header .container .edit-img .img-container {
+    width: 296px;
+    height: 295px;
+  }
+  header .container img {
+    width: 290px;
+    height: 290px;
+  }
+}
+@media (max-width: 410px) {
+  .contact-sec .big-container .form-container {
+    padding-right: 200px;
+  }
+  .first-p {
+    font-size: 21px;
+    padding-left: 350px;
+  }
+}
+
+@media (max-width: 410px) {
+  .first-p {
+    font-size: 20px;
+    padding-left: 400px;
+  }
+  .first-p .hello {
+    font-size: 17px;
+  }
+  .bla {
+    display: none;
+  }
 }

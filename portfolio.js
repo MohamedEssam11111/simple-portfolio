@@ -1,5 +1,5 @@
 const typed = new Typed("#type-animation", {
-  strings: ["Front-End "],
+  strings: ["Front-End web developer"],
   typeSpeed: 50,
   backSpeed: 25,
   loop: true,
@@ -180,3 +180,88 @@ tl5.fromTo(
   },
   "-=0.4" // overlap slightly with title animation
 );
+
+// const tl6 = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: "#contact-sec",
+//     start: "top 40%",
+//     toggleActions: "play none none reverse",
+//     markers: false,
+//   },
+// });
+
+// tl6
+//   .from("#contact-sec .big-container #animate", {
+//     opacity: 0,
+//     x: -60,
+//     duration: 0.9,
+//     ease: "back.out(1.7)",
+//   })
+//   .To(
+//     {
+//       opacity: 1,
+//       x: 0,
+//       scale: 1,
+//       duration: 1.8,
+//       stagger: 0.18,
+//       ease: "power3.out",
+//       delay: 0.8,
+//     },
+//     "-=0.4" // overlap slightly with title animation
+//   );
+const tl7 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".form-container",
+    start: "top 60%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl7
+  .from(".form-container", {
+    opacity: 0,
+    x: 60,
+    duration: 0.9,
+    ease: "back.out(1.7)",
+  })
+  .To(
+    {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.18,
+      ease: "power3.out",
+      delay: 0.8,
+    },
+    "-=0.4" // overlap slightly with title animation
+  );
+const tl8 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".cv-btn",
+    start: "top 20%",
+    toggleActions: "play none none reverse",
+    markers: false,
+  },
+});
+
+tl8
+  .from(".cv-btn", {
+    opacity: 0,
+    y: 60,
+    duration: 0.9,
+    ease: "back.out(1.7)",
+  })
+  .To(
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.18,
+      ease: "power3.out",
+      delay: 0.8,
+    },
+    "-=0.4" // overlap slightly with title animation
+  );
